@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './tutorials/App.jsx';
+import MainLayout from './container/layout/MainLayout.jsx';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<MainLayout/>, document.getElementById('root'));
+
+
+
