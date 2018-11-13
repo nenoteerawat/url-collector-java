@@ -9,9 +9,10 @@ import {RouterModule} from "@angular/router";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LoginComponent} from './login/login.component';
 import {AuthGuard} from "./service/guard/auth.guard";
-import {fakeBackendProvider} from "./intercepter/fake-backend";
 import {HttpClientModule} from "@angular/common/http";
 import {AuthService} from "./service/authen/auth.service";
+import {fakeBackendAuthenInterceptorProvider} from "./backend/fake-authen";
+import {fakeBackendDatabaseInterceptorProvider} from "./backend/fake-database";
 
 @NgModule({
   declarations: [
@@ -31,9 +32,11 @@ import {AuthService} from "./service/authen/auth.service";
   providers: [
     AuthGuard,
     AuthService,
-    fakeBackendProvider
+    fakeBackendAuthenInterceptorProvider,
+    fakeBackendDatabaseInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
 }
+

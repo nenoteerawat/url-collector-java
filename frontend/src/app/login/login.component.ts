@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {ILogin} from "../login";
 import {Router} from "@angular/router";
 import {AuthService} from "../service/authen/auth.service";
 import {first} from "rxjs/operators";
@@ -48,7 +47,6 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          console.log(this.returnUrl);
           this.router.navigate([this.returnUrl]);
         },
         error => {

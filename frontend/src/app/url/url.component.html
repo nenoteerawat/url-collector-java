@@ -9,21 +9,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Biz Growing</td>
-          <td>Biz Growing</td>
-        </tr>
-        <tr>
-          <td>Portal Admin</td>
-          <td>Portal Admin</td>
-        </tr>
-        <tr>
-          <td>CB Project</td>
-          <td>CB Project</td>
-        </tr>
-        <tr>
-          <td>CB Bank Support</td>
-          <td>CB Bank Support</td>
+        <tr *ngFor="let urlItem of urlItems">
+          <td *ngFor="let url of urlItem">
+            <a href="{{ url.path }}"  target="_blank">{{ url.title }}</a>
+          </td>
         </tr>
         </tbody>
       </table>

@@ -11,8 +11,7 @@ import {Observable, of, throwError} from "rxjs";
 import {dematerialize, materialize, mergeMap,delay} from "rxjs/operators";
 
 @Injectable()
-export class FakeBackendInterceptor implements HttpInterceptor {
-
+export class FakeBackendAuthenInterceptor implements HttpInterceptor {
   constructor() { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -24,6 +23,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
     };
 
     let users: any[] = [adminUser];
+
+    console.log("FakeBackendAuthenInterceptor : "+request.url);
 
     return of(null).pipe(mergeMap(() => {
       // authenticate
@@ -50,7 +51,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
           return throwError({ error: { message: 'Username or password is incorrect' } });
         }
       }
-
     }))
       .pipe(materialize())
       .pipe(delay(500))
@@ -60,9 +60,9 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
 }
 
-export let fakeBackendProvider = {
+export let fakeBackendAuthenInterceptorProvider = {
   // use fake backend in place of Http service for backend-less development
   provide: HTTP_INTERCEPTORS,
-  useClass: FakeBackendInterceptor,
+  useClass: FakeBackendAuthenInterceptor,
   multi: true
 };

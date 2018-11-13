@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MongoDBService} from "../service/mongoDB/mongo-db.service";
 
 @Component({
   selector: 'app-url',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./url.component.scss']
 })
 export class UrlComponent implements OnInit {
+  urlItems :any[] = [];
 
-  constructor() { }
+  constructor(private mongoDBService : MongoDBService) { }
 
   ngOnInit() {
+    this.getAllUrl();
+  }
+
+  getAllUrl(){
+    this.mongoDBService.getURL().subscribe(response => {
+      this.urlItems = response;
+    });
   }
 
 }

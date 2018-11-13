@@ -12,16 +12,20 @@ import {LdapComponent} from "../../ldap/ldap.component";
 import {DatabaseComponent} from "../../database/database.component";
 import {SftpComponent} from "../../sftp/sftp.component";
 import {LocalhostComponent} from "../../localhost/localhost.component";
+import {MongoDBService} from "../../service/mongoDB/mongo-db.service";
+import {fakeBackendDatabaseInterceptorProvider} from "../../backend/fake-database";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule.forChild(AdminLayoutRoutes),
     FormsModule,
     MatButtonModule,
     MatRippleModule,
     MatInputModule,
-    MatTooltipModule,
+    MatTooltipModule
   ],
   declarations: [
     UrlComponent,
@@ -31,7 +35,12 @@ import {LocalhostComponent} from "../../localhost/localhost.component";
     DatabaseComponent,
     SftpComponent,
     LocalhostComponent
-  ]
+  ],
+   providers : [
+     MongoDBService ,
+     fakeBackendDatabaseInterceptorProvider
+   ]
+
 })
 
 export class AdminLayoutModule {}
