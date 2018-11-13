@@ -8,14 +8,13 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
-    { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
-    { path: '/table-list', title: 'Table List',  icon:'content_paste', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'library_books', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'location_on', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'notifications', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'unarchive', class: 'active-pro' },
+    { path: '/url-collect/url', title: 'URL',  icon: 'dashboard', class: '' },
+    { path: '/url-collect/user-company', title: 'User Company',  icon:'content_paste', class: '' },
+    { path: '/url-collect/user-bank', title: 'User Bank',  icon:'content_paste', class: '' },
+    { path: '/url-collect/database', title: 'Database',  icon:'library_books', class: '' },
+    { path: '/url-collect/sftp', title: 'SFTP',  icon:'bubble_chart', class: '' },
+    { path: '/url-collect/ldap', title: 'LDAP',  icon:'location_on', class: '' },
+    { path: '/url-collect/localhost', title: 'LocalHost',  icon:'notifications', class: '' }
 ];
 
 @Component({

@@ -1,23 +1,18 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AdminLayoutRoutes } from './admin-layout.routing';
-import { DashboardComponent } from '../../dashboard/dashboard.component';
-import { UserProfileComponent } from '../../user-profile/user-profile.component';
-import { TableListComponent } from '../../table-list/table-list.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
-import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {AdminLayoutRoutes} from './admin-layout.routing';
 
-import {
-  MatButtonModule,
-  MatInputModule,
-  MatRippleModule,
-  MatTooltipModule,
-} from '@angular/material';
+import {MatButtonModule, MatInputModule, MatRippleModule, MatTooltipModule,} from '@angular/material';
+import {UrlComponent} from "../../url/url.component";
+import {UserBankComponent} from "../../user-bank/user-bank.component";
+import {UserCompanyComponent} from "../../user-company/user-company.component";
+import {LdapComponent} from "../../ldap/ldap.component";
+import {DatabaseComponent} from "../../database/database.component";
+import {SftpComponent} from "../../sftp/sftp.component";
+import {LocalhostComponent} from "../../localhost/localhost.component";
+
 @NgModule({
   imports: [
     CommonModule,
@@ -29,14 +24,13 @@ import {
     MatTooltipModule,
   ],
   declarations: [
-    DashboardComponent,
-    UserProfileComponent,
-    TableListComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent,
-    UpgradeComponent,
+    UrlComponent,
+    UserBankComponent,
+    UserCompanyComponent,
+    LdapComponent,
+    DatabaseComponent,
+    SftpComponent,
+    LocalhostComponent
   ]
 })
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "test-app2": {
+    "app-collect": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/test-app2",
+            "outputPath": "dist/app-collect",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -27,15 +27,15 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css",
+              "src/assets/css/google_font.css",
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
               "node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js",
-              "node_modules/chartist/dist/chartist.js",
-              "node_modules/bootstrap-material-design/dist/js/bootstrap-material-design.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -68,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "test-app2:build"
+            "browserTarget": "app-collect:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "test-app2:build:production"
+              "browserTarget": "app-collect:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "test-app2:build"
+            "browserTarget": "app-collect:build"
           }
         },
         "test": {
@@ -113,7 +113,7 @@
         }
       }
     },
-    "test-app2-e2e": {
+    "app-collect-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -122,11 +122,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "test-app2:serve"
+            "devServerTarget": "app-collect:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "test-app2:serve:production"
+              "devServerTarget": "app-collect:serve:production"
             }
           }
         },
@@ -142,5 +142,5 @@
       }
     }
   },
-  "defaultProject": "test-app2"
+  "defaultProject": "app-collect"
 }
