@@ -6,7 +6,27 @@ export class MongoDBService {
 
   constructor(private http: HttpClient) { }
 
-  getURL(){
-    return this.http.get<any[]>('http://localhost:4200/api/database/url');
+  getURLWebApp(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlWebApp');
+  }
+
+  getURLReloadConfig(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlReloadConfig');
+  }
+
+  getURLConsole(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlConsole');
+  }
+
+  getURLBatch(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlBatch');
+  }
+
+  getURLWebService(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlWebService');
+  }
+
+  getURLBugZilla(){
+    return this.http.get<any[]>('http://localhost:4200/api/database/urlBugzilla');
   }
 }

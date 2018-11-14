@@ -1,6 +1,9 @@
 <div class="main-content">
   <div class="container-fluid">
     <div class="row">
+      <header>
+        <h2>WebApp</h2>
+      </header>
       <table class="table table-hover">
         <thead>
         <tr class="bg-success">
@@ -9,9 +12,99 @@
         </tr>
         </thead>
         <tbody>
-        <tr *ngFor="let urlItem of urlItems">
-          <td *ngFor="let url of urlItem">
-            <a href="{{ url.path }}"  target="_blank">{{ url.title }}</a>
+        <tr *ngFor="let rowWebApp of urlWebApps">
+          <td *ngFor="let colWebApp of rowWebApp">
+            <a href="{{ colWebApp.path }}"  target="_blank">{{ colWebApp.title }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <header>
+        <h2>ReloadConfig</h2>
+      </header>
+      <table class="table table-hover">
+        <thead>
+        <tr class="bg-success">
+          <th scope="col">SIT</th>
+          <th scope="col">UAT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rowReloadConfig of urlReloadConfigs">
+          <td *ngFor="let colReloadConfig of rowReloadConfig">
+            <a href="{{ colReloadConfig.path }}"  target="_blank">{{ colReloadConfig.title }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <header>
+        <h2>Console</h2>
+      </header>
+      <table class="table table-hover">
+        <thead>
+        <tr class="bg-success">
+          <th scope="col">SIT</th>
+          <th scope="col">UAT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rowConsole of urlConsoles">
+          <td *ngFor="let colConsole of rowConsole">
+            <a href="{{ colConsole.path }}"  target="_blank">{{ colConsole.title }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <header>
+        <h2>Batch</h2>
+      </header>
+      <table class="table table-hover">
+        <thead>
+        <tr class="bg-success">
+          <th scope="col">SIT</th>
+          <th scope="col">UAT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rowBatch of urlBatchs">
+          <td *ngFor="let colBatch of rowBatch">
+            <a href="{{ colBatch.path }}"  target="_blank">{{ colBatch.title }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <header>
+        <h2>WebService</h2>
+      </header>
+      <table class="table table-hover">
+        <thead>
+        <tr class="bg-success">
+          <th scope="col">SIT</th>
+          <th scope="col">UAT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rowWebService of urlWebServices">
+          <td *ngFor="let colWebService of rowWebService">
+            <a href="{{ colWebService.path }}"  target="_blank">{{ colWebService.title }}</a>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <header>
+        <h2>Bugzilla</h2>
+      </header>
+      <table class="table table-hover">
+        <thead>
+        <tr class="bg-success">
+          <th scope="col">Name</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rowBugzilla of urlBugzilla">
+          <td *ngFor="let colBugzilla of rowBugzilla">
+            <a href="{{ colBugzilla.path }}"  target="_blank">{{ colBugzilla.title }}</a>
           </td>
         </tr>
         </tbody>

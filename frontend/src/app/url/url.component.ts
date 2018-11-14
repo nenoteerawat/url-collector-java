@@ -7,7 +7,12 @@ import {MongoDBService} from "../service/mongoDB/mongo-db.service";
   styleUrls: ['./url.component.scss']
 })
 export class UrlComponent implements OnInit {
-  urlItems :any[] = [];
+  urlWebApps :any[] = [];
+  urlReloadConfigs :any[] = [];
+  urlConsoles :any[] = [];
+  urlBatchs :any[] = [];
+  urlBugzilla :any[] = [];
+  urlWebServices :any[] = [];
 
   constructor(private mongoDBService : MongoDBService) { }
 
@@ -16,8 +21,23 @@ export class UrlComponent implements OnInit {
   }
 
   getAllUrl(){
-    this.mongoDBService.getURL().subscribe(response => {
-      this.urlItems = response;
+    this.mongoDBService.getURLWebApp().subscribe(response => {
+      this.urlWebApps = response;
+    });
+    this.mongoDBService.getURLBatch().subscribe(response => {
+      this.urlBatchs = response;
+    });
+    this.mongoDBService.getURLBugZilla().subscribe(response => {
+      this.urlBugzilla = response;
+    });
+    this.mongoDBService.getURLConsole().subscribe(response => {
+      this.urlConsoles = response;
+    });
+    this.mongoDBService.getURLReloadConfig().subscribe(response => {
+      this.urlReloadConfigs = response;
+    });
+    this.mongoDBService.getURLWebService().subscribe(response => {
+      this.urlWebServices = response;
     });
   }
 
